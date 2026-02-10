@@ -125,7 +125,7 @@ step "6/${TOTAL_STEPS} — CLI Tools"
 brew install \
   eza bat ripgrep fd fzf zoxide tldr jq yq \
   httpie difftastic dust procs bottom git-delta \
-  neovim atuin starship 2>/dev/null || true
+  neovim atuin starship lazygit btop htop cmatrix 2>/dev/null || true
 
 if [[ ! -f ~/.fzf.zsh ]]; then
   "$(brew --prefix)"/opt/fzf/install --all --no-bash --no-fish 2>/dev/null || true

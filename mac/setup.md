@@ -564,10 +564,14 @@ eval "$(atuin init zsh)"
 | `zoxide` | `cd` | cd inteligente |
 | `dust` | `du` | du visual |
 | `procs` | `ps` | ps moderno |
-| `btm` | `htop` | monitor de sistema |
+| `btm` | `htop` | monitor de sistema (bottom) |
+| `btop` | `htop` | monitor de sistema visual |
+| `htop` | `top` | monitor de processos classico |
 | `delta` | `diff` | diff bonito no git |
 | `difft` | `diff` | diff semantico |
 | `tldr` | `man` | man pages simplificados |
 | `jq` / `yq` | — | JSON / YAML processor |
 | `httpie` | `curl` | HTTP client amigavel |
 | `atuin` | history | historico de shell inteligente |
+| `lazygit` | — | TUI para git (alias: `lg`) |
+| `cmatrix` | — | matrix rain no terminal |
