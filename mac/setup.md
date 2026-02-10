@@ -1,5 +1,7 @@
 # macOS Dev Environment — Configuracao
 
+> **Requisito:** macOS com Apple Silicon (M1/M2/M3/M4). Os scripts usam paths do Homebrew em `/opt/homebrew` (arm64). Nao compativel com Intel.
+
 ## Quick Start (Mac formatado)
 
 Copie e cole no Terminal (ja vem instalado no macOS):

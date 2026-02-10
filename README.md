@@ -1,6 +1,8 @@
 # wconfig
 
-Configuracoes pessoais de ambiente de desenvolvimento.
+Configuracoes pessoais de ambiente de desenvolvimento para **macOS Apple Silicon** (M1/M2/M3/M4).
+
+> Scripts e paths assumem arquitetura arm64 com Homebrew em `/opt/homebrew`. Nao compativel com Intel.
 
 ## Quick Start (Mac formatado)
 
