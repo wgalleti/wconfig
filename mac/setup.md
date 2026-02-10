@@ -1,19 +1,41 @@
-# macOS Dev Environment — Configuração
+# macOS Dev Environment — Configuracao
 
-> Pós-instalação via [`setup.sh`](setup.sh). Aqui estão apenas as configurações manuais e arquivos de config.
+## Quick Start (Mac formatado)
 
-## 1. Executar o script
+Copie e cole no Terminal (ja vem instalado no macOS):
 
 ```bash
+# 1. Xcode CLI Tools (necessario para git e compilacao)
+xcode-select --install
+```
+
+Aguarde a instalacao terminar, depois continue:
+
+```bash
+# 2. Homebrew
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# 3. Git (versao do Homebrew)
+brew install git
+
+# 4. Clonar este repo
+git clone git@github.com:wgalleti/wconfig.git ~/wconfig
+cd ~/wconfig/mac
+
+# 5. Rodar o setup
 chmod +x setup.sh
 ./setup.sh
 ```
 
-O script instala: Homebrew, iTerm2, Zsh, Oh My Zsh + plugins, CLI tools, pyenv, uv, ruff, Volta, Bun, Biome, Yarn Berry, Go, Docker, databases, Starship e Git config.
+> Se ainda nao tem SSH key configurada, use HTTPS:
+> `git clone https://github.com/wgalleti/wconfig.git ~/wconfig`
+
+Apos o script, siga as configuracoes manuais abaixo.
 
 ---
 
-## 2. Git — Identidade
+## 1. Git — Identidade
 
 O script configura tudo exceto a identidade (pessoal de cada máquina):
 
@@ -24,7 +46,7 @@ git config --global user.email "seu@email.com"
 
 ---
 
-## 3. iTerm2 — Configurações manuais
+## 2. iTerm2 — Configuracoes manuais
 
 ### 3.1 Fonte
 
@@ -69,7 +91,7 @@ Abra iTerm2 → `Settings` (Cmd + ,):
 
 ---
 
-## 4. Starship — Prompt
+## 3. Starship — Prompt
 
 O script ja cria `~/.config/starship.toml`. Para customizar:
 
@@ -146,7 +168,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git \
 
 ---
 
-## 5. Yarn Berry — Uso em projetos
+## 4. Yarn Berry — Uso em projetos
 
 O script configura o Yarn Berry globalmente (`~/.yarnrc.yml`). Para cada projeto:
 
@@ -203,7 +225,7 @@ yarn plugin import workspace-tools      # workspaces
 
 ---
 
-## 6. O .zshrc
+## 5. O .zshrc
 
 Copiar para `~/.zshrc` e rodar `source ~/.zshrc`:
 
@@ -503,7 +525,7 @@ eval "$(atuin init zsh)"
 
 ---
 
-## 7. Referencia Rapida
+## 6. Referencia rapida
 
 ### Gerenciadores de versao
 

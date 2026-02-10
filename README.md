@@ -2,27 +2,49 @@
 
 Configuracoes pessoais de ambiente de desenvolvimento.
 
+## Quick Start (Mac formatado)
+
+Abra o Terminal e cole:
+
+```bash
+xcode-select --install
+```
+
+Aguarde terminar, depois:
+
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+brew install git
+git clone git@github.com:wgalleti/wconfig.git ~/wconfig
+cd ~/wconfig/mac && chmod +x setup.sh && ./setup.sh
+```
+
+> Sem SSH key? Use: `git clone https://github.com/wgalleti/wconfig.git ~/wconfig`
+
+Apos o setup base, rode as ferramentas de IA:
+
+```bash
+cd ~/wconfig/ia && chmod +x setup.sh && ./setup.sh
+```
+
+Depois siga as configuracoes manuais em cada `setup.md`.
+
 ## Estrutura
 
 ```
 mac/
-  setup.sh   # Script de instalacao (idempotente)
+  setup.sh   # Base do macOS (idempotente)
+  setup.md   # Configuracoes manuais pos-instalacao
+
+ia/
+  setup.sh   # Editores e ferramentas com IA (idempotente)
   setup.md   # Configuracoes manuais pos-instalacao
 ```
 
-## Uso
-
-### macOS
-
-```bash
-cd mac
-chmod +x setup.sh
-./setup.sh
-```
-
-Apos o script, siga as configuracoes manuais em [`mac/setup.md`](mac/setup.md).
-
 ## O que inclui
+
+### mac/
 
 - **Terminal:** iTerm2, Zsh, Oh My Zsh, Starship
 - **CLI tools:** eza, bat, ripgrep, fd, fzf, zoxide, delta, atuin, neovim
@@ -32,3 +54,9 @@ Apos o script, siga as configuracoes manuais em [`mac/setup.md`](mac/setup.md).
 - **Docker:** Docker Desktop, lazydocker, dive, ctop
 - **Databases:** pgcli, mycli, litecli, mongosh, redis
 - **Git:** delta, aliases, rebase workflow
+
+### ia/
+
+- **Cursor:** IDE com IA multi-modelo (brew)
+- **Google Antigravity:** IDE agent-first com Gemini (brew)
+- **Claude Code:** CLI agentico no terminal (brew)
