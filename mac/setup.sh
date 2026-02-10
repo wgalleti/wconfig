@@ -142,6 +142,12 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init - bash 2>/dev/null || pyenv init - 2>/dev/null || true)"
 
+# OpenSSL do Homebrew — necessario para pyenv compilar Python
+export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig"
+info "OpenSSL flags configuradas para compilacao"
+
 PY_VERSION=$(pyenv install --list 2>/dev/null | grep -E '^\s*3\.12\.' | tail -1 | tr -d ' ')
 if [[ -n "$PY_VERSION" ]]; then
   pyenv install -s "$PY_VERSION"

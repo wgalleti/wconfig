@@ -294,6 +294,11 @@ export PRE_COMMIT_ALLOW_NO_CONFIG=1
 export AWS_DEFAULT_REGION=us-east-1
 export EDITOR='nvim'
 
+# OpenSSL do Homebrew (necessario para pyenv compilar Python)
+export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
+export CPPFLAGS="-I/opt/homebrew/opt/openssl@3/include"
+export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig"
+
 # Brew otimizacoes
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_ENV_HINTS=1
