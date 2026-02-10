@@ -310,7 +310,6 @@ typeset -U PATH
 
 path=(
   "$HOME/.local/bin"
-  "$PYENV_ROOT/bin"
   "$VOLTA_HOME/bin"
   "$BUN_INSTALL/bin"
   "$GOPATH/bin"
@@ -509,7 +508,9 @@ update-all() {
 # ============================================================
 # INICIALIZACOES
 # ============================================================
-[[ -d $PYENV_ROOT/bin ]] && eval "$(pyenv init - zsh)"
+# pyenv (shims + autocompletion)
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
 eval "$(uv generate-shell-completion zsh)"
 eval "$(ruff generate-shell-completion zsh)"
 eval "$(zoxide init zsh)"

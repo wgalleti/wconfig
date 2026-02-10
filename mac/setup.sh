@@ -139,8 +139,8 @@ step "7/${TOTAL_STEPS} — Python (pyenv + uv + ruff)"
 brew install pyenv uv ruff 2>/dev/null || true
 
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - bash 2>/dev/null || pyenv init - 2>/dev/null || true)"
+eval "$(pyenv init --path 2>/dev/null || true)"
+eval "$(pyenv init - 2>/dev/null || true)"
 
 # OpenSSL do Homebrew — necessario para pyenv compilar Python
 export LDFLAGS="-L/opt/homebrew/opt/openssl@3/lib"
@@ -166,6 +166,9 @@ brew install volta bun biome 2>/dev/null || true
 
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+# Inicializar estrutura do VOLTA_HOME (brew so instala o binario)
+volta setup 2>/dev/null || true
 
 volta install node@lts 2>/dev/null || fail "volta install node@lts"
 volta install yarn@4 2>/dev/null || fail "volta install yarn@4"
